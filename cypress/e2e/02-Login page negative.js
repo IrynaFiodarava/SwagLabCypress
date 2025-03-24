@@ -13,13 +13,13 @@ describe('User can log in unsuccessfully', () => {
         cy.get('#login-button').click();
         cy.get('[data-test="error"]').should('have.text', 'Epic sadface: Password is required');
     });
-    it('Empty fields test', () => {
+    it('Empty field user name test', () => {
 
         cy.get('[data-test="password"]').type('secret_sauce');
         cy.get('#login-button').click();
         cy.get('[data-test="error"]').should('have.text', 'Epic sadface: Username is required');
     });
-    it.only('Empty fields test', () => {
+    it('Wrong data input fields test', () => {
         cy.get('[data-test="username"]').type('standard_userbla');
         cy.get('[data-test="password"]').type('secret_saucebla');
         cy.get('#login-button').click();
